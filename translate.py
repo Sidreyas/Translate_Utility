@@ -1,10 +1,9 @@
 
-import translate 
+
 import transformers
 import streamlit as st
 from googletrans import Translator
 import time
-
 
 
 
@@ -27,7 +26,9 @@ text_area = st.text_area("Enter the text")
 
 
 googletrans_translator = Translator()
-translate_translator =  translate.Translator(from_lang=language[source_lan], to_lang=language[destination_lan])
+
+from translate import Translator
+translate_translator = Translator(from_lang=language[source_lan], to_lang=language[destination_lan])
 
 
 
