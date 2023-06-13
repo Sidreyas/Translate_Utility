@@ -15,11 +15,11 @@ languages_pre_train = {'English': 'en', 'German': 'de', 'French': 'fr', 'Spanish
 source_lan = st.selectbox("Select the source language",list(language.keys()))
 destination_lan  = st.selectbox("Select the destination language",list(language.keys()))
 
-src_pre_train= st.selectbox("Select the source for pre train model",list(languages_pre_train.keys()))
-dst_pre_train = st.selectbox("Select the destination for pre train model",list(languages_pre_train.keys()))
+# src_pre_train= st.selectbox("Select the source for pre train model",list(languages_pre_train.keys()))
+# dst_pre_train = st.selectbox("Select the destination for pre train model",list(languages_pre_train.keys()))
 
-task_name = f"translation_{languages_pre_train[src_pre_train]}_to_{languages_pre_train[dst_pre_train]}"
-model_name = f"Helsinki-NLP/opus-mt-{languages_pre_train[src_pre_train]}-{languages_pre_train[dst_pre_train]}"
+# task_name = f"translation_{languages_pre_train[src_pre_train]}_to_{languages_pre_train[dst_pre_train]}"
+# model_name = f"Helsinki-NLP/opus-mt-{languages_pre_train[src_pre_train]}-{languages_pre_train[dst_pre_train]}"
 
 
 text_area = st.text_area("Enter the text")
@@ -27,8 +27,8 @@ text_area = st.text_area("Enter the text")
 
 googletrans_translator = Translator()
 
-from translate import Translator
-translate_translator = Translator(from_lang=language[source_lan], to_lang=language[destination_lan])
+# from translate import Translator
+# translate_translator = Translator(from_lang=language[source_lan], to_lang=language[destination_lan])
 
 
 
@@ -45,24 +45,24 @@ if translate_button:
     st.info("Run Time for googletrans = " + str((end_googletrans - start_googletrans)*1000))
 
 
-    st.subheader('Translate_MODULE')
+#     st.subheader('Translate_MODULE')
     
-    start_Translate_MODULE = time.time()
-    translate_results = translate_translator.translate(text_area)
-    end_Translate_MODULE = time.time()
-    st.success(translate_results)
-    st.info("Run Time for Translate_MODULE  =  " + str((end_Translate_MODULE - start_Translate_MODULE)*1000))
+#     start_Translate_MODULE = time.time()
+#     translate_results = translate_translator.translate(text_area)
+#     end_Translate_MODULE = time.time()
+#     st.success(translate_results)
+#     st.info("Run Time for Translate_MODULE  =  " + str((end_Translate_MODULE - start_Translate_MODULE)*1000))
 
 
 
-    st.subheader("Transformer model based")
+#     st.subheader("Transformer model based")
 
-    result_pre_train  = transformers.pipeline(task_name, model=model_name, tokenizer=model_name, use_auth_token=False)
-    start_pre_train = time.time()
-    output =  result_pre_train(text_area)[0]["translation_text"]
-    end_pre_train = time.time()
-    st.success(output)
-    st.info("Run Time for pre_trained model  =  " + str((end_pre_train - start_pre_train)*1000))
+#     result_pre_train  = transformers.pipeline(task_name, model=model_name, tokenizer=model_name, use_auth_token=False)
+#     start_pre_train = time.time()
+#     output =  result_pre_train(text_area)[0]["translation_text"]
+#     end_pre_train = time.time()
+#     st.success(output)
+#     st.info("Run Time for pre_trained model  =  " + str((end_pre_train - start_pre_train)*1000))
 
     
 
