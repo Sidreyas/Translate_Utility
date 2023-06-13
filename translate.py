@@ -12,8 +12,8 @@ language = {'afrikaans': 'af', 'albanian': 'sq', 'amharic': 'am', 'arabic': 'ar'
 # languages_pre_train = {'English': 'en', 'German': 'de', 'French': 'fr', 'Spanish': 'es', 'Italian': 'it', 'Dutch': 'nl', 'Portuguese': 'pt', 'Russian': 'ru', 'Chinese': 'zh', 'Japanese': 'ja', 'Korean': 'ko', 'Arabic': 'ar', 'Hebrew': 'he', 'Turkish': 'tr', 'Polish': 'pl', 'Romanian': 'ro', 'Greek': 'el', 'Swedish': 'sv', 'Norwegian': 'no', 'Danish': 'da'}
 
 
-source_lan = st.selectbox("Select the source language",list(language.keys(),index=21))
-destination_lan  = st.selectbox("Select the destination language",list(language.keys(),index=30))
+source_lan = st.selectbox("Select the source language",list(language.keys()),index=21)
+destination_lan  = st.selectbox("Select the destination language",list(language.keys()),index=30)
 
 # src_pre_train= st.selectbox("Select the source for pre train model",list(languages_pre_train.keys()))
 # dst_pre_train = st.selectbox("Select the destination for pre train model",list(languages_pre_train.keys()))
