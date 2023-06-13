@@ -1,0 +1,7 @@
+googletrans 
+streamlit
+translate
+transformers
+streamlit 
+sacremoses
+googletrans==3.1.0a0
